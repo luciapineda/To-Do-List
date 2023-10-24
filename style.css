@@ -1,0 +1,261 @@
+/***********
+File: style.js
+--------------------
+Author: Lucia Pineda
+--------------------
+- This file contains the styles and layout rules for the HTML elements defined in the View (index.html).
+- It defines the visual appearance and presentation of the To-Do List application, ensuring a consistent and user-friendly design.
+************/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+label {
+    padding: 3px;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: #f7f7f7;
+    color: #2D2D2D;
+}
+
+.app-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #F8F5F2;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2 {
+    font-family: 'Poppins', sans-serif;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+.task-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-column, .right-column {
+    flex: 1;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.task-inputs, .filters {
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    border: 1px solid #C0C0C0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#addTask, #filterButton {
+    margin-left: auto;
+}
+
+#emptyMessage{
+    padding-top: 5px;
+    font-style: italic;
+    color: #2D2D2D;
+}
+
+h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+input[type="text"],
+input[type="date"],
+select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    border: 2px solid #2D2D2D;
+    background-color: #2D2D2D;
+    color: #f7f7f7;
+    border-radius: 5px;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+button:hover {
+    color: #2D2D2D;
+    background-color: #f7f7f7;
+    border: 2px solid #2D2D2D;
+}
+
+.task-list {
+    background-color: #FFFFFF;
+    padding: 20px;
+    border-radius: 5px;
+    border: 1px solid #C0C0C0;
+}
+
+ul {
+    list-style: none;
+}
+
+li {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.task-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.task-details-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 200px; /* Set your desired maximum width */
+    word-wrap: break-word; /* Allow text to wrap within the container */
+}
+
+.task-buttons-container{
+    margin-left: auto;
+    display: flex;  /* Use Flexbox */
+    justify-content: space-between;  /* Space them evenly */
+    align-items: center;  /* Center vertically */
+}
+
+.task-edit-button{
+    margin-right: 2px;
+    border: 2px solid #2D2D2D;
+    background-color: #f7f7f7;
+    color: #2D2D2D;
+}
+
+.task-edit-button:hover {
+    background-color: #2D2D2D;
+    border: 2px solid #2D2D2D;
+    color: #f7f7f7;
+}
+
+.task-complete-button {
+    border: 2px solid #189324;
+    background-color: #FFFFFF;
+    color: #189324;
+}
+
+.task-complete-button:hover {
+    background-color: #189324;
+    border: 2px solid #189324;
+    color: #f7f7f7;
+}
+
+.small-text {
+    font-size: 14px;
+    color: #777;
+}
+
+.description {
+    font-size: 20px;
+    padding: 7px;
+}
+
+.task-complete-button {
+    margin-left: auto;
+}
+
+.high-priority {
+    background-color: #FFC8C8;
+}
+
+.medium-priority {
+    background-color: #FDC38D;
+}
+
+.low-priority {
+    background-color: #FDF9A8;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal-content {
+    background-color: #f2f2f2;
+    margin: 20% auto;
+    padding: 20px;
+    border-radius: 5px;
+    width: 50%;
+    position: relative;
+}
+
+.close-button {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* Modal form fields and buttons */
+.modal-content label {
+    margin-top: 10px;
+}
+
+.modal-content input,
+.modal-content select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.modal-content button {
+    padding: 10px 20px;
+    border: 1px solid #2D2D2D;
+    background-color: #2D2D2D;
+    color: #f7f7f7;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    color: #2D2D2D;
+    background-color: #f7f7f7;
+    border: 1px solid #ccc;
+}

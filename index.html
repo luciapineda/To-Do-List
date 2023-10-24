@@ -1,0 +1,88 @@
+<!------------
+File: index.html
+--------------------
+Author: Lucia Pineda
+--------------------
+- This file contains the styles and layout rules for the HTML elements defined in the View (index.html).
+- It defines the visual appearance and presentation of the To-Do List application, ensuring a consistent and user-friendly design.
+--------------->
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lucia's To-Do List</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:400,600,700">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+</head>
+<body>
+    <div class="app-container">
+        <h1>&#128211 Lucia's To-Do List</h1>
+        <div class="task-container">
+            <div class="left-column">
+                <div class="task-inputs">
+                    <h2>Add a Task</h2>
+                    <label for="taskInput">Task:</label>
+                    <input type="text" id="taskInput" placeholder="Ex. Complete Math HW, Call Dentist">
+                    <label for="dueDateInput:">Due on:</label>
+                    <input type="date" id="dueDateInput">
+                    <label for="priorityInput">Priority:</label>
+                    <select id="priorityInput">
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                    <button id="addTask">Add Task</button>
+                </div>
+                <div class="filters">
+                    <h2>Filters</h2>
+                    <label for="filterDateInput">By Due Date:</label>
+                    <input type="date" id="filterDateInput">
+                    <label for="filterPriorityInput">By Priority:</label>
+                    <select id="filterPriorityInput">
+                        <option value="All">All</option>
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                    <button id="filterButton">Apply Filters</button>
+                </div>
+            </div>
+            <div class="right-column">
+                <div class="task-list">
+                    <h2>&#128204 Task List</h2>
+                    <input type="text" id="searchInput" placeholder="Search tasks">
+                    <ul id="taskList" class="task-items"></ul>
+                    <p id="emptyMessage" class="empty-message">No tasks right now. Hooray! &#127881</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Task Modal -->
+    <div id="editTaskModal" class="modal">
+        <div class="modal-content">
+            <span id="closeEditModal" class="close-button">&times;</span>
+            <h2>Edit Task</h2>
+            <form id="editTaskForm">
+                <label for="editTaskDescription">Task Description:</label>
+                <input type="text" id="editTaskDescription" required>
+                <label for="editTaskDueDate">Due Date:</label>
+                <input type="date" id="editTaskDueDate">
+                <label for="editTaskPriority">Priority:</label>
+                <select id="editTaskPriority">
+                    <option value="Low">Low</option>
+                    <option value="Medium">Medium</option>
+                    <option value="High">High</option>
+                </select>
+                <button type="submit">Save</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="model.js"></script>
+    <script src="controller.js"></script>
+</body>
+</html>
